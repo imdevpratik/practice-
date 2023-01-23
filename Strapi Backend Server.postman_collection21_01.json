@@ -1,0 +1,2656 @@
+{
+	"info": {
+		"_postman_id": "c4382cea-0a1a-4857-bb71-3a50a9a11a55",
+		"name": "Strapi Backend Server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Project API's",
+			"item": [
+				{
+					"name": "Get Projects",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwNDc2MjE2LCJleHAiOjE2NzMwNjgyMTZ9.L8Ko45s4oKyW-ZquneHKZs67qh51Qpwmu38TKwZ3nJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "jwt",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwNDc2MDMyLCJleHAiOjE2NzMwNjgwMzJ9.56u2re30OZMvGhQ7sw7SsFrd9EuZ0JcIHJNDNf_WEHY",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:1337/api/projects?filters[Adult][$eq]=true",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "jwt",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjcwNDc2MDMyLCJleHAiOjE2NzMwNjgwMzJ9.56u2re30OZMvGhQ7sw7SsFrd9EuZ0JcIHJNDNf_WEHY",
+									"disabled": true
+								},
+								{
+									"key": "filters[Adult][$eq]",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Project",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/projects",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Project",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Project from postman with valid media and thier Caption update wiith video\",\n        \"Description\": \"basic api call ffor adding blog posts\",\n        \"Tags\": [\n            \"Tag1\",\n            \"Tag2\",\n            \"Tag3\"\n        ],\n        \"Adult\": true,\n        \"Featured\": false,\n        \"Status\": false,\n        \"Visibility\": true,\n        \"Publish\": true,\n        \"Thumbnail\": 1016,\n        \"MediaContent\": {\n            \"id\": 58,\n            \"MediaVideos\": [\n                {\n                    \"MediaVideo\": 808,\n                    \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\"\n                }\n            ]\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/projects/548",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"projects",
+								"548"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User About API's",
+			"item": [
+				{
+					"name": "Get All user's About data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/abouts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"abouts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single user About data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/abouts/3?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"abouts",
+								"3"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add user About data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3MjMwMTY2OCwiZXhwIjoxNjc0ODkzNjY4fQ.0sE-zArzlUG6JIVhgd-uHslnHl2em6V_biXK-7JAgWE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Summary\": \"Summaru about user frpm postman\",\n        \"Resume\": 1085,\n        \"VideoUrl\": \"youtube.com/ndhwJHDjfbnbn\",\n        \"ProfessionalExperience\": [\n            {\n                \"CompanyName\": \"Comapny 1\",\n                \"JobTitle\": \"Position\",\n                \"Working\": true,\n                \"Location\": \"Pune, Satara,maharashtra\",\n                \"FromDate\": \"2022-10-03\",\n                \"TillDate\": \"2023-10-05\",\n                \"ProjectDescription\": \"Full Stack Develped \"\n            }\n        ],\n        \"EducationalInformation\": [\n            {\n                \"SchoolName\": \"Name Of school\",\n                \"FieldOfStudy\": \"Developer,\",\n                \"TillDate\": \"2021-10-09\",\n                \"EducationDescription\": \"Dont Know\"\n            }\n        ],\n        \"software\": [\n            1,\n            2,\n            3\n        ],\n        \"skills\": [\n            1,\n            2,\n            3\n        ],\n        \"user\": 15,\n        \"socialLinks\": [\n            {\n                \"social\": 3,\n                \"SocialLInkUrl\": \"dataurl\"\n            }\n        ],\n        \"IntrestedIn\": [\n            \"Hiring\",\n            \"Consultancy\"\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/abouts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"abouts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user About data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjI5MDIwMSwiZXhwIjoxNjc0ODgyMjAxfQ._QUEHdValU424CaBZcUfDg3zwTB-5P1Cv0tsM07WOcw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Summary\": \"Summaru about user frpm postman\",\n        \"Resume\": 237,\n        \"VideoUrl\": \"youtube.com/ndhwJHDjfbnbn\",\n        \"ProfessionalExperience\": [\n            {\n                \"CompanyName\": \"Comapny 1\",\n                \"JobTitle\": \"Position\",\n                \"Working\": true,\n                \"Location\": \"Pune, Satara,maharashtra\",\n                \"FromDate\": \"2022-10-03\",\n                \"TillDate\": \"2023-10-05\",\n                \"ProjectDescription\": \"Full Stack Develped \"\n            }\n        ],\n        \"EducationalInformation\": [\n            {\n                \"SchoolName\": \"Name Of school\",\n                \"FieldOfStudy\": \"Developer,\",\n                \"TillDate\": \"2021-10-09\",\n                \"EducationDescription\": \"Dont Know\"\n            }\n        ],\n        \"software\": [\n            1,\n            2,\n            3\n        ],\n        \"skills\": [\n            1,\n            2,\n            3\n        ],\n        \"user\": 15,\n        \"socialLinks\": [\n            {\n                \"social\": 1,\n                \"SocialLInkUrl\": \"dataurl\"\n            }\n        ],\n        \"IntrestedIn\": [\n            \"Hiring\",\n            \"Consultancy\"\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/abouts/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"abouts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user About data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjI5MDIwMSwiZXhwIjoxNjc0ODgyMjAxfQ._QUEHdValU424CaBZcUfDg3zwTB-5P1Cv0tsM07WOcw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/abouts/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"abouts",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Image Upload",
+			"item": [
+				{
+					"name": "add File",
+					"request": {
+						"method": "POST",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User API",
+			"item": [
+				{
+					"name": "Signup User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"forget@password14\",\n    \"email\": \"pratik.bcgm13099+9@gmail.com\",\n    \"password\": \"123456\",\n    \"FirstName\": \"Forgot\",\n    \"LastName\": \"Password\"\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/local/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"local",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"identifier\":\"Mayankcg9\",\n    \"password\":\"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/local",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"local"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User (Edit Profile Form)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"pratikbankar1999@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/users/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"users",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/users?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single User",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/users/14?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"users",
+								"14"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MTYxNjM3OSwiZXhwIjoxNjc0MjA4Mzc5fQ.gM17WJrKO-frgGlVje5SNUZi8_zicjV64QfWKFdoKqE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/users/15",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"users",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forgot Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"pratik.bcgm1309@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/forgot-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"forgot-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check UserName",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"Mayankcg9\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/users-permissions/users/name",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"users-permissions",
+								"users",
+								"name"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"code\": \"16b7cea1809dc3d75c912c1728165095ce414aa9db5996b5c59d0dd4f21221af85c73c28762f840c34b3bcc48de99546913587c844267b05395abc9d565d9458\", \n    \"password\": \"resetPass\",\n    \"passwordConfirmation\": \"resetPass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/reset-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resend Confirmation Mail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"pratik.bcgm1309@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/auth/send-email-confirmation",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"auth",
+								"send-email-confirmation"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Follow Manage",
+			"item": [
+				{
+					"name": "Follow User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"follow_by_user_id\": 15,\n        \"follow_to_user_id\": 14\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/follow-manages",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"follow-manages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unfollow",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/follow-manages/17",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"follow-manages",
+								"17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post APi",
+			"item": [
+				{
+					"name": "Get All Posts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/posts?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"posts"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Post",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/posts/3?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"posts",
+								"3"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Single Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MTY4OTEwOSwiZXhwIjoxNjc0MjgxMTA5fQ.sbvhD6y0PnynwtYOJgPVfRoZcr7aw5Qj0HvExf2J1qk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/posts/23",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"posts",
+								"23"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MTY4OTEwOSwiZXhwIjoxNjc0MjgxMTA5fQ.sbvhD6y0PnynwtYOJgPVfRoZcr7aw5Qj0HvExf2J1qk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Project from postman with valid media and thier Caption\",\n        \"Description\": \"basic api call ffor adding blog posts\",\n        \"Medium\": 2,\n        \"SubjectMatter\": [\n            1,\n            2,\n            3\n        ],\n        \"Softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"Tags\": [\n            \"Tag1\",\n            \"Tag2\",\n            \"Tag3\"\n        ],\n        \"Adult\": true,\n        \"Featured\": false,\n        \"Status\": false,\n        \"Visibility\": \"true\",\n        \"Publish\": true,\n        \"Thumbnail\": 1083,\n        \"added_by\":14,\n        \"MediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 961,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": null\n            },\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 878,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": null\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/posts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"posts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Post",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjExOTM2NSwiZXhwIjoxNjc0NzExMzY1fQ.BVCDOmLMEE_T7i6Y8BoJ7Rpd-DXu3yp4kufmgkCCDUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Project from postman with valid media and thier Caption update\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/posts/28",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"posts",
+								"28"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Type API's",
+			"item": [
+				{
+					"name": "Get All Job Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/job-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"job-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Job Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/job-types/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"job-types",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Experience API's",
+			"item": [
+				{
+					"name": "Get All Job Experiences",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/job-experiences",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"job-experiences"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Job Experience",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/job-experiences/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"job-experiences",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job Positions API's",
+			"item": [
+				{
+					"name": "Get All Job Posttions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/job-positions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"job-positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Job Position",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/job-positions/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"job-positions",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Job API's",
+			"item": [
+				{
+					"name": "Get All Jobs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/jobs?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"jobs"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Job",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/jobs/3?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"jobs",
+								"3"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTYsImlhdCI6MTY3Mzk0MjY3MSwiZXhwIjoxNjc2NTM0NjcxfQ.o-yq4ph6zbWvdTMgVxPRWh7LbPEURqb1rhYGVNdsdIE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Job Added By Postman\",\n        \"Description\": \"Job Added by Postman Description\",\n        \"Visibility\": \"Private\",\n        \"job_type\": 2,\n        \"job_position\": 2,\n        \"job_experience\": 2,\n        \"HowToApply\": \"Email\",\n        \"ApplicationBy\": \"pratik.b@start.com\",\n        \"Country\": \"INDIA\",\n        \"State\": \"Maharashtra\",\n        \"City\": \"pune\",\n        \"ClosingDate\": \"2023-01-02\",\n        \"WorkRemotely\": true,\n        \"RelocationAssistance\": true,\n        \"FromAmount\": 23,\n        \"ToAmount\": 50,\n        \"CompanyName\": \"startup\",\n        \"CompanyUrl\": \"startup.com\",\n        \"Tags\": [\n            \"Sink\",\n            \"Nato\"\n        ],\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"skills\": [\n            1,\n            2,\n            3\n        ],\n        \"added_by\": 16,\n        \"Logo\": 1083,\n        \"Status\": false,\n        \"Publish\": false,\n        \"JobMediaContent\": [\n            {\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \"Image Added By Postman Bode for Testing to the perticular JOB\",\n                \"MediaLink\": \"youtube.com\",\n                \"MediaLinkCaption\": \"added bu postman for testing\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/jobs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"jobs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjExOTM2NSwiZXhwIjoxNjc0NzExMzY1fQ.BVCDOmLMEE_T7i6Y8BoJ7Rpd-DXu3yp4kufmgkCCDUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Job Added By Postman Update\",\n        \"Description\": \"Job Added by Postman Description UPdate\",\n        \"Visibility\": \"Private\",\n        \"job_type\": 2,\n        \"job_position\": 2,\n        \"job_experience\": 2,\n        \"HowToApply\": \"Email\",\n        \"ApplicationBy\": \"pratik.b@start.com\",\n        \"Country\": \"India\",\n        \"State\": \"Mahara\",\n        \"City\": \"Satara\",\n        \"ClosingDate\": \"2023-05-06\",\n        \"WorkRemotely\": false,\n        \"RelocationAssistance\": false,\n        \"FromAmount\": 23,\n        \"ToAmount\": 50,\n        \"CompanyName\": \"startup\",\n        \"CompanyUrl\": \"startup.com\",\n        \"Tags\": [\n            \"Sink\"\n        ],\n        \"softwares\": [\n            2,\n            3\n        ],\n        \"skills\": [\n            2,\n            3\n        ],\n        \"added_by\": 14,\n        \"Logo\": 1083,\n        \"Status\": true,\n        \"Publish\": true,\n        \"JobMediaContent\": [\n            {\n                \"id\": 12,\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \"Image Added By Postman Bode for Testing to the perticular JOB update\",\n                \"MediaLink\": \"youtube.com\",\n                \"MediaLinkCaption\": \"added bu postman for testing update\"\n            },\n            {\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \"Image Added By Postman Bode for Testing to the perticular JOB update\",\n                \"MediaLink\": \"youtube.com\",\n                \"MediaLinkCaption\": \"added bu postman for testing update\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/jobs/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"jobs",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Job",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjExOTM2NSwiZXhwIjoxNjc0NzExMzY1fQ.BVCDOmLMEE_T7i6Y8BoJ7Rpd-DXu3yp4kufmgkCCDUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Job Added By Postman Update\",\n        \"Description\": \"Job Added by Postman Description UPdate\",\n        \"Visibility\": \"Private\",\n        \"job_type\": 2,\n        \"job_position\": 2,\n        \"job_experience\": 2,\n        \"HowToApply\": \"Email\",\n        \"ApplicationBy\": \"pratik.b@start.com\",\n        \"Country\": \"India\",\n        \"State\": \"Mahara\",\n        \"City\": \"Satara\",\n        \"ClosingDate\": \"2023-05-06\",\n        \"WorkRemotely\": false,\n        \"RelocationAssistance\": false,\n        \"FromAmount\": 23,\n        \"ToAmount\": 50,\n        \"CompanyName\": \"startup\",\n        \"CompanyUrl\": \"startup.com\",\n        \"Tags\": [\n            \"Sink\"\n        ],\n        \"softwares\": [\n            2,\n            3\n        ],\n        \"skills\": [\n            2,\n            3\n        ],\n        \"added_by\": 14,\n        \"Logo\": 1083,\n        \"Status\": true,\n        \"Publish\": true,\n        \"JobMediaContent\": [\n            {\n                \"id\": 12,\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \"Image Added By Postman Bode for Testing to the perticular JOB update\",\n                \"MediaLink\": \"youtube.com\",\n                \"MediaLinkCaption\": \"added bu postman for testing update\"\n            },\n            {\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \"Image Added By Postman Bode for Testing to the perticular JOB update\",\n                \"MediaLink\": \"youtube.com\",\n                \"MediaLinkCaption\": \"added bu postman for testing update\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/jobs/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"jobs",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Type API's",
+			"item": [
+				{
+					"name": "Get All Product Types",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/product-types?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"product-types"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/product-types/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"product-types",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Categories API's",
+			"item": [
+				{
+					"name": "Get All Product Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/product-categories?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"product-categories"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/product-categories/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"product-categories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product Sub Categories API's",
+			"item": [
+				{
+					"name": "Get All Product Sub Categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/product-sub-categories?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"product-sub-categories"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product Sub Category",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/product-sub-categories/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"product-sub-categories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product API's",
+			"item": [
+				{
+					"name": "Get All Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/products?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/product-sub-categories/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"product-sub-categories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjIwMTQ2OCwiZXhwIjoxNjc0NzkzNDY4fQ.ndLLeKlubF-_FfpVnbSHR-I5rqXGIOL49hzLSaDWSsc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Product from Postman\",\n        \"Description\": \"Description\",\n        \"Free\": false,\n        \"Price\": 25,\n        \"Changelog\": \"Changelog by Postman\",\n        \"Adult\": true,\n        \"Tags\": [\n            \"data1\",\n            \"postman tag\",\n            \"postman tag2\"\n        ],\n        \"Models\": [\n            \"model by postman\",\n            \"postman model\",\n            \"posymodel1\"\n        ],\n        \"PolygonCount\": 3,\n        \"VerticesCount\": 5,\n        \"License\": \"Custom\",\n        \"product_type\": 1,\n        \"product_category\": 1,\n        \"product_sub_categories\": [\n            1,\n            2,\n            3\n        ],\n        \"softwares\": [\n            1,\n            2,\n            3,\n            4\n        ],\n        \"Thumbnail\": 1118,\n        \"Visibility\": \"Private\",\n        \"Status\": true,\n        \"Publish\": false,\n        \"added_by\": 14,\n        \"Geometry\": \"Polygon Postman\",\n        \"ProductMediaContent\": [\n            {\n                \"MediaImage\": 793,\n                \"MediaImageCaption\": \"Image caption by postman\",\n                \"MediaLink\": \"postman.com.in@databypostman\",\n                \"MediaLinkCaption\": \"LINK Caption BY POSTMAN\"\n            },\n            {\n                \"MediaImage\": 1083,\n                \"MediaImageCaption\": \"Image caption by postman 2\",\n                \"MediaLink\": \"postman.com.in@databypostman2nd\",\n                \"MediaLinkCaption\": \"LINK Caption BY POSTMAN 2nd\"\n            }\n        ],\n        \"ProductFiles\": [\n            {\n                \"File\": 1122,\n                \"fileFormat\":1,\n                \"software\":1,\n                \"SoftwareVersion\":0.1,\n                \"renderer\":1,\n                \"rendererVersion\":0.2\n            },\n             {\n                \"File\": 1122,\n                \"fileFormat\":2,\n                \"software\":2,\n                \"SoftwareVersion\":0.2,\n                \"renderer\":2,\n                \"rendererVersion\":0.1\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjExOTM2NSwiZXhwIjoxNjc0NzExMzY1fQ.BVCDOmLMEE_T7i6Y8BoJ7Rpd-DXu3yp4kufmgkCCDUw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjIwMTQ2OCwiZXhwIjoxNjc0NzkzNDY4fQ.ndLLeKlubF-_FfpVnbSHR-I5rqXGIOL49hzLSaDWSsc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Product from Postman\",\n        \"Description\": \"Description\",\n        \"Free\": false,\n        \"Price\": 25,\n        \"Changelog\": \"Changelog by Postman\",\n        \"Adult\": true,\n        \"Tags\": [\n            \"data1\",\n            \"postman tag\",\n            \"postman tag2\"\n        ],\n        \"Models\": [\n            \"model by postman\",\n            \"postman model\",\n            \"posymodel1\"\n        ],\n        \"PolygonCount\": 3,\n        \"VerticesCount\": 5,\n        \"License\": \"Custom\",\n        \"product_type\": 1,\n        \"product_category\": 1,\n        \"product_sub_categories\": [\n            1,\n            2,\n            3\n        ],\n        \"softwares\": [\n            1,\n            2,\n            3,\n            4\n        ],\n        \"Thumbnail\": 1118,\n        \"Visibility\": \"Private\",\n        \"Status\": true,\n        \"Publish\": false,\n        \"added_by\": 14,\n        \"Geometry\": \"Polygon Postman\",\n        \"ProductMediaContent\": [\n            {\n                \"MediaImage\": 793,\n                \"MediaImageCaption\": \"Image caption by postman\",\n                \"MediaLink\": \"postman.com.in@databypostman\",\n                \"MediaLinkCaption\": \"LINK Caption BY POSTMAN\"\n            },\n            {\n                \"MediaImage\": 1083,\n                \"MediaImageCaption\": \"Image caption by postman 2\",\n                \"MediaLink\": \"postman.com.in@databypostman2nd\",\n                \"MediaLinkCaption\": \"LINK Caption BY POSTMAN 2nd\"\n            }\n        ],\n        \"ProductFiles\": [\n            {\n                \"File\": 1122,\n                \"fileFormat\": 1,\n                \"software\": 1,\n                \"SoftwareVersion\": 0.1,\n                \"renderer\": 1,\n                \"rendererVersion\": 0.2\n            },\n            {\n                \"File\": 1122,\n                \"fileFormat\": 2,\n                \"software\": 2,\n                \"SoftwareVersion\": 0.2,\n                \"renderer\": 2,\n                \"rendererVersion\": 0.1\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/products/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTQsImlhdCI6MTY3MjIwNjA3MCwiZXhwIjoxNjc0Nzk4MDcwfQ.zaea-cw065DN4_HHvQ1Jk7Nx4XfDYldcvRoyA7ItqLs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3MjIwNTY0NiwiZXhwIjoxNjc0Nzk3NjQ2fQ.lmAe2JKk_2VXdiv1ZerwBDGoYGI3irtVYaCh5nkYmjA",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/products/12",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"products",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FIle Formats API's",
+			"item": [
+				{
+					"name": "Get All File Formats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/file-formats?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"file-formats"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single File Format",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/file-formats/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"file-formats",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Renderers API's",
+			"item": [
+				{
+					"name": "Get All Renderers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/renderers?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"renderers"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Renderer",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:1337/api/renderers/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"renderers",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutorial Categories API's",
+			"item": [
+				{
+					"name": "Get All  Tutorial Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorial-catogories?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorial-catogories"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Tutorial Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorial-catogories/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorial-catogories",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutorial Levels API's",
+			"item": [
+				{
+					"name": "Get All  Tutorial Levels",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorial-levels?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorial-levels"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Tutorial level",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorial-levels/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorial-levels",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tutorial API's",
+			"item": [
+				{
+					"name": "Add Tutorial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorials",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorials"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All  Tutorials",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorials?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorials"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Tutorial",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorials/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorials",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Tutorial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Update From Postman  !\",\n        \"Description\": \"Update Description Added for Tutorial !\",\n        \"Adult\": false,\n        \"Free\": true,\n        \"Publish\": false,\n        \"Status\": true,\n        \"Tags\": [\n            \"#update\",\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorials/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorials",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Tutorial",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/tutorials/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"tutorials",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News Categories API's",
+			"item": [
+				{
+					"name": "Get All  News Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/news-categories?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"news-categories"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single News Category",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"Title\": \"Added From Postman !\",\n        \"Description\": \"Description Added for Tutorial !\",\n        \"Adult\": true,\n        \"Free\": false,\n        \"Publish\": true,\n        \"Status\": false,\n        \"Tags\": [\n            \"#tutorial\",\n            \"#learning\"\n        ],\n        \"Price\": 45,\n        \"Language\": \"English\",\n        \"softwares\": [\n            1,\n            2,\n            3\n        ],\n        \"tutorialCatogory\": 1,\n        \"tutoriaLlevel\": 1,\n        \"added_by\": 15,\n        \"Thumbnail\": 975,\n        \"tutorialLessons\": [\n            {\n                \"lessonTitle\": \"Lesson !\",\n                \"free\": true,\n                \"orderId\": \"1\",\n                \"tutorialMediaContent\": [\n                    {\n                        \"mediaImage\": 793,\n                        \"mediaImageCaption\": \"image caption !\",\n                        \"mediaVideo\": 808,\n                        \"mediaVideoCaption\": \"VIdeo Captio\",\n                        \"mediaURL\": \"mediaURL !\",\n                        \"mediaURLCaption\": \"media URLcaption\",\n                        \"mediaText\": \"Text By lessions\",\n                        \"mediaVideoDuration\": \"!min 10 sec\",\n                        \"mediaURLDuration\": \"2min 10 sec\",\n                        \"mediaVideoThumbnail\": 961,\n                        \"mediaURLThumbnail\": 1084,\n                        \"mediaType\": \"video\",\n                        \"orderId\": \"2\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/news-categories/2?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"news-categories",
+								"2"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "News API",
+			"item": [
+				{
+					"name": "Add News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All News",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single News",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s/3?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s",
+								"3"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s/3?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s",
+								"3"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comment API's",
+			"item": [
+				{
+					"name": "Add News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"My sample response\",\n    \"approvalStatus\":\"Approved\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/comments/api::post.post:3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"comments",
+								"api::post.post:3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All News",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single News",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s/1?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s",
+								"1"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s/3?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s",
+								"3"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete News",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTUsImlhdCI6MTY3Mjg5NDgyMiwiZXhwIjoxNjc1NDg2ODIyfQ.KQ2RDzctKDZSib3RRSdPSX_DSIH079FlFyBvA_vhqhA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"data\": {\n        \"added_by\": 15,\n        \"Title\": \"News By <oderator\",\n        \"Tags\": [\n            \"#news\",\n            \"#update\"\n        ],\n        \"Adult\": true,\n        \"Status\": false,\n        \"Visibility\": \"Public\",\n        \"Publish\": false,\n        \"newsCategory\": 2,\n        \"Thumbnail\": 1084,\n        \"newsMediaContent\": [\n            {\n                \"MediaVideo\": 808,\n                \"MediaVideoCaption\": \" for second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaImage\": 959,\n                \"MediaImageCaption\": \" Adblocker eh?  No problem.  Please consider these other ways of supporting our work:\",\n                \"MediaLink\": \"link\",\n                \"MediaLinkCaption\": \"or second image Adblocker eh?  No problem.  Please consider these other ways of supporting our work\",\n                \"MediaText\": \"text for data entry\",\n                \"OrderId\": \"1\"\n            }\n        ]\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:1337/api/new-s/3?populate=*",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "1337",
+							"path": [
+								"api",
+								"new-s",
+								"3"
+							],
+							"query": [
+								{
+									"key": "populate",
+									"value": "*"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
